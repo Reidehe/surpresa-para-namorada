@@ -4,24 +4,93 @@
     <title>Para meu amor</title>
     <style>
         body {
-            background-color: #f0e68c; /* Cor de fundo amarela */
-            text-align: center;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            padding-top: 50px;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Dancing Script', 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ffe4e1 0%, #fff8dc 100%);
+            position: relative;
         }
         h1 {
-            color: #d2691e; /* Cor do título */
+            color: #d72660;
+            font-size: 3em;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px 8px #fff0f5;
         }
         .mensagem {
-            font-size: 1.5em;
-            color: #8b4513; /* Cor do texto */
+            font-size: 1.7em;
+            color: #8b4513;
+            margin-bottom: 1em;
+            background: rgba(255,255,255,0.7);
+            border-radius: 20px;
+            padding: 20px 30px;
+            box-shadow: 0 2px 12px #f8bbd0;
+            display: inline-block;
         }
+        .decoracao {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 0;
+        }
+        .decoracao svg {
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+        .imagem-romantica {
+            border-radius: 30px;
+            box-shadow: 0 4px 24px #d72660a0;
+            border: 4px solid #fff0f5;
+            margin-bottom: 1em;
+        }
+        .botao-surpresa {
+            background: linear-gradient(90deg, #d72660 0%, #ffb6b9 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 2px 8px #d72660a0;
+            margin-top: 1em;
+            transition: transform 0.2s;
+        }
+        .botao-surpresa:hover {
+            transform: scale(1.08);
+            background: linear-gradient(90deg, #ffb6b9 0%, #d72660 100%);
+        }
+        .carinho {
+            font-size: 1.2em;
+            color: #d72660;
+            margin-top: 1em;
+            font-family: 'Dancing Script', cursive;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
     </style>
 </head>
 <body>
+    <div class="decoracao">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="#d72660"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffb6b9"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="#d72660"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
     <h1>Uma surpresa para você!</h1>
-    <p class="mensagem">Oi, meu amor! Criei esta página só para você.</p>
-    <img src="https://i.imgur.com/seulink.jpg" alt="Nossa foto" width="400">
-    <p>Espero que você goste. Feito com todo o carinho.</p>
+    <p class="mensagem">Oi, meu amor! Criei esta página só para você.<br>Você é a razão do meu sorriso todos os dias.</p>
+    <img class="imagem-romantica" src="https://i.imgur.com/seulink.jpg" alt="Nossa foto" width="400">
+    <button class="botao-surpresa" onclick="mostrarCarinho()">Clique para ver uma mensagem especial</button>
+    <div id="carinho" class="carinho" style="display:none;">Te amo mais do que palavras podem expressar! 💖</div>
+    <script>
+        function mostrarCarinho() {
+            document.getElementById('carinho').style.display = 'block';
+        }
+    </script>
+    <p class="carinho">Espero que você goste. Feito com todo o carinho.</p>
 </body>
 </html>
